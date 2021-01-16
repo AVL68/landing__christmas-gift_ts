@@ -5,6 +5,7 @@
 /*========== BASE ==========*/
 *, ::before, ::after {
   box-sizing: border-box;
+  transition: 0.3s linear
 }
 
 html {
@@ -20,6 +21,21 @@ html {
   color: var(--title-color);
   font-size: 2rem;
   cursor: pointer;
+}
+
+/*========== Button language ==========*/
+.change-language {
+  position: absolute;
+  right: 3.9rem;
+  top: 2.4rem;
+  display: flex;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--first-color);
+  }
+
 }
 
 body {
@@ -120,41 +136,45 @@ img {
     margin-bottom: var(--mb-3);
   }
 
-  &__link, &__logo, &__toggle {
+  &__link, &__logo, &__toggle, change-language {
     color: var(--title-color);
     font-weight: var(--font-semi-bold);
   }
-  &__logo{
-    &:hover{
+
+  &__logo {
+    &:hover {
       color: var(--first-color);
     }
   }
-  &__link{
+
+  &__link {
     transition: .3s;
 
-    &:hover{
+    &:hover {
       color: var(--first-color);
     }
   }
-  &__toggle{
+
+  &__toggle {
     font-size: 1.3rem;
     cursor: pointer;
   }
 }
+
 /* Show menu */
-.show-menu{
+.show-menu {
   top: calc(var(--header-height) + 1rem);
 }
 
 @import "menuActiveLink";
 
 /* Change background header */
-.scroll-header{
-  box-shadow: 0 1px 4px rgba(0,0,0,.1);
+.scroll-header {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
 }
 
 /* Scroll top */
-.scrolltop{
+.scrolltop {
   position: fixed;
   right: 1rem;
   bottom: -20%;
@@ -168,42 +188,45 @@ img {
   transition: .4s;
   visibility: hidden;
 
-  &:hover{
+  &:hover {
     background-color: var(--first-color);
   }
 
-  &__icon{
+  &__icon {
     font-size: 1.5rem;
     color: var(--body-color);
   }
 }
 
-.show-scroll{
+.show-scroll {
   visibility: visible;
   bottom: 1.5rem;
 }
 
 /*========== HOME ==========*/
-.home{
-  &__container{
+.home {
+  &__container {
     row-gap: .5rem;
   }
-  &__img{
+
+  &__img {
     width: 280px;
     justify-self: center;
   }
-  &__title{
+
+  &__title {
     font-size: var(--biggest-font-size);
     font-weight: var(--font-bold);
     margin-bottom: var(--mb-2);
   }
-  &__description{
+
+  &__description {
     margin-bottom: var(--mb-3);
   }
 }
 
 /*========== BUTTONS ==========*/
-.button{
+.button {
   display: inline-block;
   background-color: var(--first-color);
   color: #fff;
@@ -212,16 +235,16 @@ img {
   font-weight: var(--font-semi-bold);
   transition: .3s;
 
-  &:hover{
+  &:hover {
     background-color: var(--first-color-alt);
   }
 
-  &-link{
+  &-link {
     background: none;
     padding: 0;
     color: var(--first-color);
 
-    &:hover{
+    &:hover {
       background-color: transparent;
       color: var(--first-color-alt);
     }
@@ -229,14 +252,16 @@ img {
 }
 
 /*========== SHARE ==========*/
-.share{
-  &__data{
+.share {
+  &__data {
     text-align: center;
   }
-  &__description{
+
+  &__description {
     margin-bottom: var(--mb-2);
   }
-  &__img{
+
+  &__img {
     width: 280px;
     justify-self: center;
   }
