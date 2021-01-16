@@ -1,0 +1,14 @@
+.active-link{
+  position: relative;
+
+  &::before{
+    content: '';
+    position: absolute;
+    bottom: -.75rem;
+    left: 45%;
+    width: 5px;
+    height: 5px;
+    background-color: var(--title-color);
+    border-radius: 50%;
+  }
+}

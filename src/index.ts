@@ -1,32 +1,13 @@
 import './styles/scss.scss'
 import {removeMenuMobile, showMenu} from './ts/menuAction'
 import ScrollReveal from 'scrollreveal'
+import {activeLink} from "./ts/scrollAction";
 
 showMenu('nav-toggle', 'nav-menu')
 
 removeMenuMobile()
 
-
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll('section[id]')
-
-function scrollActive() {
-    const scrollY = window.pageYOffset
-
-    sections.forEach((current: HTMLElement): void => {
-        const sectionHeight = current.offsetHeight
-        const sectionTop = current.offsetTop - 50;
-        const sectionId = current.getAttribute('id')
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-        } else {
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
-        }
-    })
-}
-
-window.addEventListener('scroll', scrollActive)
+activeLink()
 
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
@@ -40,7 +21,7 @@ window.addEventListener('scroll', scrollHeader)
 
 /*==================== SHOW SCROLL TOP ====================*/
 function scrollTop(): void {
-    const scrollTop = document.getElementById('scroll-top');
+    const scrollTop = document.getElementById('scroll-top')
     // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
     if (this.scrollY >= 560) scrollTop.classList.add('show-scroll'); else scrollTop.classList.remove('show-scroll')
 }
