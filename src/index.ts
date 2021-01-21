@@ -1,7 +1,7 @@
 import './styles/scss.scss'
 import {removeMenuMobile, showMenu} from './ts/menuAction'
 import ScrollReveal from 'scrollreveal'
-import {activeLink} from "./ts/scrollAction";
+import {activeLink, changeBackgroundHeader, showScrollTop} from "./ts/scrollAction";
 import {toggleDarkIightTheme} from "./ts/toggleDarkIightTheme";
 import {toggleChangeLanguage} from "./ts/toggleChangeLanguage";
 
@@ -11,24 +11,9 @@ removeMenuMobile()
 
 activeLink()
 
+changeBackgroundHeader()
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/
-function scrollHeader(): void {
-    const nav = document.getElementById('header')
-    // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
-    if (this.scrollY >= 200) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
-}
-
-window.addEventListener('scroll', scrollHeader)
-
-/*==================== SHOW SCROLL TOP ====================*/
-function scrollTop(): void {
-    const scrollTop = document.getElementById('scroll-top')
-    // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
-    if (this.scrollY >= 560) scrollTop.classList.add('show-scroll'); else scrollTop.classList.remove('show-scroll')
-}
-
-window.addEventListener('scroll', scrollTop)
+showScrollTop()
 
 toggleDarkIightTheme()
 toggleChangeLanguage()
